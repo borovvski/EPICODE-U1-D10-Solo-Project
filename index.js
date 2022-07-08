@@ -118,28 +118,33 @@ function whatDayIsIt() {
   return d;
 }
 console.log(whatDayIsIt());
+
 console.log("\n/* EXERCISE 8\n");
 
-function rollTheDice() {
-  let one = dice(1);
-  let two = dice(2);
-  let three = dice(3);
-  let values = [one, two, three];
-  return values;
+function rollTheDice(number) {
+  let results = {
+    sum: 0,
+    values: [],
+  };
+  for (let i = 0; i < number; i++) {
+    let roll = dice();
+    results.sum += roll;
+    results.values.push(roll);
+  }
+  return results;
 }
-
-console.log("The values:");
-console.log(rollTheDice());
+console.log(rollTheDice(3));
 
 console.log("\n/* EXERCISE 9\n");
 
-// // let theDate = new Date('12/24/1999');
-// // let today = getDate()
-
-// // function howManyDays(passingDays){
-
-// }
-
+function howManyDays(date) {
+  let today = new Date();
+  let theDate = new Date(date);
+  let difference = today.getTime() - theDate.getTime();
+  difference / (1000 * 3600 * 24);
+  return difference;
+}
+console.log(howManyDays(01 / 01 / 2022));
 console.log("\n/* EXERCISE 10\n");
 console.log("/////JS Arrays & Objects/////\n");
 console.log("\n/* EXERCISE 11\n");
